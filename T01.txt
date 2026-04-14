@@ -1,0 +1,5 @@
+commit c5af5ef1599e49b1e64a4139acea347b5d6813b4
+Author: Nazwa Hardiana Gisanov <nazwadiana38@gmail.com>
+Date:   Wed Mar 25 19:55:38 2026 +0700
+
+    Catatab: menentukan peran dalam tim
