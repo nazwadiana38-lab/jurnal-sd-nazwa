@@ -1,10 +1,15 @@
-# API Contract User Profile
-**Endpoint:** /api/v1/profile
-**Method:** GET
+---
+#API contract user login
+**Endpoint":** /api/v1/login
+**Method":** POST
+**Request Body (JSON):**
+{
+"email": "nazwa@univ.ac.id",
+"pw": "abc123"
+}
 **Response Body (JSON):**
 {
-"id": 1,
-"user": "nazwa",
-"email": "nazwa@univ.ac.id",
-"avatar_url": "https://image.com/avatar.png"
+"status": "success",
+"token": "abc123",
+"message": "Login berhasil"
 }
