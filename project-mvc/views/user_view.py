@@ -1,2 +1,2 @@
 def render_user(user):
-print(f"=== Profil Pengguna ===\nNama: {user['name']}\nPeran: {user['role']}")
+    print(f"=== Profil Pengguna ===\nSelamat Datang, {user['name']}!\nPeran: {user['role']}")
