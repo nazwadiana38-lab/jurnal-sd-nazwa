@@ -3,12 +3,12 @@ def render_dashboard(data_list, is_loading=False):
 
     # 1. Fitur Loading State
     if is_loading:
-        print("Mohon Tunggu...") [cite: 124]
+        print("Mohon Tunggu...")
         return
 
     # 2. Validasi Data
-    if not data_list: [cite: 92]
-        print("[!] Data Kosong. Silakan sinkronisasi dengan Backend.") [cite: 94]
+    if not data_list:
+        print("[!] Data Kosong. Silakan sinkronisasi dengan Backend.")
     else:
-        for item in data_list: [cite: 95]
-            print(f"- Item ID: {item['id']} | Nama: {item['name']}") [cite: 96]
+        for item in data_list: 
+            print(f"- Item ID: {item['id']} | Nama: {item['name']}") 
