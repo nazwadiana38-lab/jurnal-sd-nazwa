@@ -1,0 +1,12 @@
+/* Simulasi Aturan Warna Tampilan Dashboard */
+.dashboard-title {
+    color: #2c3e50;
+    font-weight: bold;
+}
+.loading-text {
+    color: #f39c12;
+    font-style: italic;
+}
+.item-list {
+    color: #27ae60;
+}
