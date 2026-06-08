@@ -9,15 +9,17 @@ def render_dashboard(data_list, is_loading=False):
         for item in data_list:
             print(f"- Item ID: {item['id']} | Nama: {item['name']}")
 
-# Tambahkan fungsi simulasi fetch di bawah ini
 def fetch_data_from_api(api_function):
-    print("[System] Mencoba menghubungkan ke API...") 
+    print("[System] Mencoba menghubungkan ke API...")
     try:
-        response = api_function() 
-        if response["status"] == "success": 
-            return response["data"] 
-        else: 
-            raise Exception("API Return Error") 
-    except Exception as e: 
-        print(f"[Error] Gagal Integrasi: {e}") 
-        return None 
+        response = api_function()
+        if response["status"] == "success":
+            return response["data"]
+        elif response["status"] == "error":
+            # Mengangkat pengecualian menggunakan pesan error dari backend
+            raise Exception(response.get("message", "API Return Error"))
+        else:
+            raise Exception("API Return Error")
+    except Exception as e:
+        print(f"[Error] Gagal Integrasi: {e}")
+        return None
