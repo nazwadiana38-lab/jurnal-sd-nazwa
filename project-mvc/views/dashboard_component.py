@@ -1,14 +1,23 @@
 def render_dashboard(data_list, is_loading=False):
     print("--- DASHBOARD APLIKASI ---")
-
-    # 1. Fitur Loading State
     if is_loading:
         print("Mohon Tunggu...")
         return
-
-    # 2. Validasi Data
     if not data_list:
         print("[!] Data Kosong. Silakan sinkronisasi dengan Backend.")
     else:
-        for item in data_list: 
-            print(f"- Item ID: {item['id']} | Nama: {item['name']}") 
+        for item in data_list:
+            print(f"- Item ID: {item['id']} | Nama: {item['name']}")
+
+# Tambahkan fungsi simulasi fetch di bawah ini
+def fetch_data_from_api(api_function):
+    print("[System] Mencoba menghubungkan ke API...") 
+    try:
+        response = api_function() 
+        if response["status"] == "success": 
+            return response["data"] 
+        else: 
+            raise Exception("API Return Error") 
+    except Exception as e: 
+        print(f"[Error] Gagal Integrasi: {e}") 
+        return None 
