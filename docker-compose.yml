@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  web-app:
+    image: nginx:alpine
+    ports:
+      - "5000:5000"
+    environment:
+      - APP_USER=${USER_NAME}
+    volumes:
+      - ./logs:/app/logs
+      - shared-storage:/app/data
+    networks:
+      - mvc-network
+
+  db-server:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_PASSWORD=rahasia
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - mvc-network
